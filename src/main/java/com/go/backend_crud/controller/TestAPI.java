@@ -24,12 +24,7 @@ public class TestAPI {
             Map<String, Object> constants = new HashMap<>();
             constants.put("profile_type", "Go");
 
-            int x = 200;
-            int y = 0;
-            int z = x / y;
-            System.out.println(" x / y = " + z);
-
-            return ResponseEntity.ok(new SuccessResponse("Success", z));
+            return ResponseEntity.ok(new SuccessResponse("Success", constants));
         } catch (Exception e) {
             System.out.println("dsdsd");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
