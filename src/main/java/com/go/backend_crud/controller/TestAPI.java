@@ -26,7 +26,6 @@ public class TestAPI {
 
             return ResponseEntity.ok(new SuccessResponse("Success", constants));
         } catch (Exception e) {
-            System.out.println("dsdsd");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase()));
         }
