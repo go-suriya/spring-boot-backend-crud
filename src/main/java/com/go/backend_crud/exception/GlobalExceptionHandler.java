@@ -1,6 +1,5 @@
 package com.go.backend_crud.exception;
 
-import com.go.backend_crud.constant.Constants;
 import com.go.backend_crud.model.ResponseModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +13,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ResponseModel> handleResourceNotFoundException(ResourceNotFoundException exception) {
         ResponseModel responseModel = new ResponseModel(
-                Constants.RESULT_FALSE,
-                String.valueOf(HttpStatus.NOT_FOUND.value()),
+                Boolean.FALSE,
+                HttpStatus.NOT_FOUND.value(),
                 exception.getMessage(),
                 null
         );
@@ -25,8 +24,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ResponseModel> handleGlobalException(Exception exception) {
         ResponseModel responseModel = new ResponseModel(
-                Constants.RESULT_FALSE,
-                String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()),
+                Boolean.FALSE,
+                HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 exception.getMessage(),
                 null
         );

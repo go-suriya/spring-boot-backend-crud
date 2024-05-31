@@ -14,7 +14,7 @@ public class ResponseModel {
     private final boolean result;
 
     @JsonProperty("statusCode")
-    private String statusCode;
+    private Integer statusCode;
 
     @JsonProperty("statusMessage")
     private final String statusMessage;
