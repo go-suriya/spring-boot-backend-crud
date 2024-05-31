@@ -19,11 +19,9 @@ public class AccountController {
 
     @PostMapping("/register")
     public ResponseEntity<ResponseModel> register(@RequestBody RegisterDto registerDto) {
-        return ResponseEntity.ok(new SuccessResponse(
-                String.valueOf(HttpStatus.CREATED.value()),
-                "Success",
-                accountService.createAccount(registerDto))
-        );
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(new SuccessResponse(String.valueOf(HttpStatus.CREATED.value()), "Success", accountService.createAccount(registerDto)));
     }
 
 }
