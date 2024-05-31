@@ -6,17 +6,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@JsonPropertyOrder({"result", "status_code", "status_message", "data"})
+@JsonPropertyOrder({"result", "statusCode", "statusMessage", "data"})
 @AllArgsConstructor
 public class ResponseModel {
 
     @JsonProperty("result")
     private final boolean result;
 
-    @JsonProperty("status_code")
+    @JsonProperty("statusCode")
     private String statusCode;
 
-    @JsonProperty("status_message")
+    @JsonProperty("statusMessage")
     private final String statusMessage;
 
     private final Object data;

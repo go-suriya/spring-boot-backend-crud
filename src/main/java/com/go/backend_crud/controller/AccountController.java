@@ -1,6 +1,5 @@
 package com.go.backend_crud.controller;
 
-import com.go.backend_crud.exception.ErrorResponse;
 import com.go.backend_crud.exception.SuccessResponse;
 import com.go.backend_crud.model.ResponseModel;
 import com.go.backend_crud.model.auth.dto.RegisterDto;
@@ -20,12 +19,11 @@ public class AccountController {
 
     @PostMapping("/register")
     public ResponseEntity<ResponseModel> register(@RequestBody RegisterDto registerDto) {
-        try {
-            return ResponseEntity.ok(new SuccessResponse(String.valueOf(HttpStatus.CREATED.value()), "Success", accountService.createAccount(registerDto)));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(new ErrorResponse(String.valueOf(HttpStatus.CONFLICT.value()), e.getMessage()));
-        }
+        return ResponseEntity.ok(new SuccessResponse(
+                String.valueOf(HttpStatus.CREATED.value()),
+                "Success",
+                accountService.createAccount(registerDto))
+        );
     }
 
 }

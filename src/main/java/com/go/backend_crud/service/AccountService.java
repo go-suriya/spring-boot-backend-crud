@@ -1,13 +1,12 @@
 package com.go.backend_crud.service;
 
-import com.go.backend_crud.exception.ErrorResponse;
+import com.go.backend_crud.exception.ResourceNotFoundException;
 import com.go.backend_crud.model.auth.dto.RegisterDto;
 import com.go.backend_crud.model.entity.AccountEntity;
 import com.go.backend_crud.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -26,7 +25,7 @@ public class AccountService {
 
             return accountRepository.save(accountEntity);
         } catch (DataIntegrityViolationException e) {
-            throw new DataIntegrityViolationException(e.getMostSpecificCause().getMessage());
+            throw new ResourceNotFoundException("Duplicate key value violates unique constraint");
         }
     }
 }
