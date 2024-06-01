@@ -1,4 +1,4 @@
-package com.go.backend_crud.model.entity;
+package com.go.backend_crud.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

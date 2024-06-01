@@ -1,6 +1,6 @@
 package com.go.backend_crud.repository;
 
-import com.go.backend_crud.model.entity.AccountEntity;
+import com.go.backend_crud.entity.AccountEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

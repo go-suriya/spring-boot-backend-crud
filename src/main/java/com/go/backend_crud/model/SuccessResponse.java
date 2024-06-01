@@ -1,7 +1,6 @@
-package com.go.backend_crud.exception;
+package com.go.backend_crud.model;
 
 import com.go.backend_crud.constant.Constants;
-import com.go.backend_crud.model.ResponseModel;
 
 public class SuccessResponse extends ResponseModel {
 

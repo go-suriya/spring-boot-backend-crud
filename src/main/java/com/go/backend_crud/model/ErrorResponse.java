@@ -1,8 +1,6 @@
-package com.go.backend_crud.exception;
+package com.go.backend_crud.model;
 
 import com.go.backend_crud.constant.Constants;
-import com.go.backend_crud.model.ResponseModel;
-import org.springframework.http.HttpStatus;
 
 public class ErrorResponse extends ResponseModel {
 
